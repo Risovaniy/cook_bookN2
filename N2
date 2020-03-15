@@ -69,14 +69,10 @@ def get_shop_list_by_dishes(cook_book):
     meal = {}
 
     for dish in dishes:
-        print(f'dish {dish}\n')
         for recipe in cook_book:
-            print(f'recept {recipe}\n')
             if dish == recipe:
-                print('Yes')
                 dish_recipe = cook_book[recipe]
                 for ingredient in dish_recipe:
-                    print(ingredient['ingredient_name'])
                     if ingredient['ingredient_name'] in meal:
                         meal[ingredient['ingredient_name']]['quantity'] += int(ingredient['quantity']) * person_count
                     else:
